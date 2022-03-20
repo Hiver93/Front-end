@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- id 고유식별자 겹치지 않게 사용
+        - 공백이 들어가면 안됨
+        - 숫자나 특수문자로 시작하면 안됨 (-,_) 등을 사용 -->
+    <!-- class 전역특성 중복가능 
+        - 공백사용 가능. 특성을 여럿가지게 됨 
+        - 따라서 여러개의 스타일, 자바스크립트를 가지게 됨-->
+    <div class = "hi helloC">안녕하세요.</div>
+    <div class = "hi">안녕하세요.</div>
+    <div id ="hello">안녕하세요.</div>
+    <div id = "hello2">안녕하세요.</div>
+    <div>안녕하세요.</div>
+
+    <!-- style 속성 (태그와는 다름) 
+        - 외부파일에서 지정한 스타일을 무시하고 우선 적용
+        - 특수한 상황을 제외하고는 지양하자 -->
+
+    <!-- title 속성 (태그와는 다름) 하나의 태그에 툴팁으로 보여줌
+        - 공백과 개행을 인식
+        - 가장 하위자식의 타이틀을 우선하여 보여줌
+        - 상속 부모의 title을 상속받아 보여줌 -->
+
+        <div title = "바깥쪽 박스">
+            <div title = "첫번째 
+            요소">안녕하세요.</div>
+            <div>반갑습니다.</div>            
+        </div>
+        
+    <!-- lang 속성. 컨텐츠 사용자의 언어를 명시
+        - 기본으로 "en"이 적용되어있음
+        - <html lang = "ko"> 등으로 사용
+        - 일부분이 다른언어일경우 바꿀 수 있다
+        - 스크린리더에서도 활용한다 -->
+    <div>
+        <a lang = "en">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione consectetur tempore nulla quia, sit eos, error perspiciatis non saepe cumque maiores quis soluta! Accusantium ullam fugit corporis, facilis molestiae quibusdam!</a>
+    </div>
+
+    <!-- data-* 속성 *부분에 정해줄 수 있음
+        - 보통 자바스크립트와 같이 활용
+        - 사용자 눈에는 보이지 않음 -->
+    <article 
+        data-columns = "3"
+        data-index-number = "12314"
+        data-parent = "cars">
+    </article>
+
+    <!-- draggable 속성 드래그가 가능한지 아닌지 명시
+        - boolean이 아님 "true""false"로 명시
+        - 기본값은 auto
+        - 드래그는 후에 자바스크립트와 활용가능-->
+    <img src="images/300.png" draggable = "true"/>
+
+    <!-- hidden 속성
+        - boolean속성 적용하면 true 
+        - 시각적으로 안보이고 스크린리더에서도 나오지 않음
+        - 보안적으로 막아야 할 경우 쓰면 안됨
+        - CSS의 display 속성 값으로 변경하면 재정의 하여 보이게 가능-->
+    <img src="images/300.png" draggable = "true" hidden/>
+    
+
+</body>
+</html>
