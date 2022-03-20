@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- metadata 헤드에 들어가는 정보들
+        - 데이터를 설명하는 데이터 -->
+    <!-- <title> 제목표시줄이나 페이지 텝에 보이는 문서 제목을 정의
+        - 안쪽에 테그 무시
+        - 문자열만 표시
+        - 다른 <title> 요소 포함하지 않은 <head>
+        - 즐겨찾기 등록시 기본 이름
+        - SEO에 큰 영향을 줌
+        - 단어의 나열을 피하라 (검색 알고리즘에서 순서가 내려갈 수 있다) -->
+    <!-- <meta> 문서 레벨 메타데이터 요소
+        - 빈 요소
+        - name content 특성과 함께 사용할 시 이름과 값 쌍으로 표시 
+        - 정보가 여러개인 경우 <meta>태그를 여러개 사용
+        - application-name 웹페이지에서 구동중인 어플리케이션 이름 
+        - description 
+        - generator 페이지를 생성한 소프트웨어의 식별자
+        - keywords 페이지의 콘텐츠와 관련된, 쉼표로 구분한 키워드 목록
+        - referrer 어디서 왔는지 설명-->
+    <!-- charset 문자 인코딩 <head>의첫번째나 title전에 작성 추천 
+        - 표준메타데이터 이름
+        - "viewport" 초기 사이즈에 대한 힌트.
+        - - 쉼표로 구분 width height
+        - - initial-scale 장치너비와 뷰포트 너비의 비율 정의
+        - - user-scalable 브라우저 확대 축소 가능하게 할건지 
+        - - - maximum-scale, minimum-scale-->
+  
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- <link> 현재의 문서와 외부 리소스의 관게를 명시. 스타일시트를 연결할때 많이 사용 사이트 아이콘(파비콘)등 사용
+        - rel relationship 관계 "icon" "stylesheet" 등
+        - 파일을 불러올때는 타입 명시 type MIME타임으로 값을 줌 text/html, text/css 등-->
+    <!-- MIME type 
+        - type/subtype
+        - 무엇으로 이루어진/어떤 파일 임을 표시
+        - text / plain, html, css, javascript
+        - image
+        - audio
+        - video
+        - application
+        - mdn에서 검색가능 -->
+    <!-- <link href="style/main.css" rel="stylesheet" type="text/css"/> -->
+        
+    <title>metadata</title>
+    <!-- <script> 외부의 스크립트 파일 연결 내부에 직접 쓸때도 사용 
+        - <head> <body> 어디든 사용 가능하지만 <body> 마지막에 사용하는것이 추천됨-->
+    <script>
+
+    </script>
+    <!-- <style> css를 이용하여 스타일 지정
+    - 외부로 작성하고 <link>로 연결하는게 좋음 -->
+    <style>
+        a { color: red; }
+    </style>
+</head>
+<body>
+    <a>
+        안녕하세요. 반갑습니다.
+    </a>
+</body>
+</html>
