@@ -1,25 +1,25 @@
 /* type selector
  - 일관적으로 작성해야하는 경우
  - 보통 한눈에 보기 좋게 상단에 작성 */
-h2{
+/* h2{
     color:purple;
-}
+} */
 
 /* ID Selector 
  - 문서당 하나만 사용*/
-#welcome-title{
+/* #welcome-title{
     color:red;
-}
+} */
 
 /* Class Selctor
  - 중복가능 여럿이 같은 클래스 공유 
  - 한 태그가 여러개의 클래스르 가질 수 있다*/
- .blue{
+ /* .blue{
      color:blue;
  }
  .red{
      color:red;
- }
+ } */
 
  /* Attribute
   - 태그이외의 추가적인 정보를 전달하는 것 */
@@ -27,14 +27,14 @@ h2{
   /* Attribute seletor*/
 
   /* 1. [attr] */
-  a[target]{
+  /* a[target]{
       color:hotpink;
   }
 
   /* 2.[attr="value"] */
-  a[href="http://example.org"]{
+  /* a[href="http://example.org"]{
       color:indigo;
-  }
+  } */ 
 /* 
   input[type="submit"]{
       background-color: green;
@@ -164,7 +164,7 @@ input[type=text]:focus{
 
 
 /* enabled, disabled, checked */
-input[type=text]:enabled{
+/* input[type=text]:enabled{
     background-color: skyblue;    
 }
 
@@ -178,4 +178,163 @@ input[type=radio]:checked{
 
 input[type=checkbox]:checked{
     outline: 3px solid blue;
+} */
+
+
+/* Pseudo-Element Selector 가상 요소 선택자
+   -> selector::____ (이 방법 추천)
+   -> selector:____ (이것도 되긴 함)
+   - 
+   */
+
+/* before, after
+    요소의 직전,직후에 가상요소가 생긴다.
+    꾸밈의 요소로 사용 드래그로 선택이 안됨
+ */
+/* .movie::before{
+    content: 'MOVIE';
+    color: indianred;
 }
+
+.favorite::before{
+    content: '★';
+} */
+
+/* first-letter, first-line, selection 
+    - first. before 요소와 함께사용 하면 before에 적용
+    - seletion 드래그항목에 적용
+*/
+/* .lorem::first-letter{
+    color: red;
+    font-size: 30px;    
+}
+.lorem::first-line{
+    color:red;
+    font-size: 30px;
+}
+.lorem::selection{
+    color:white;
+    background-color: red;
+}
+.lorem::before{
+    content: 'Before';
+} */
+
+
+/* Seletion Combination 선택자 결합
+
+    - 하위( ), 자식(>), 형제선택자, 그룹화
+    - 하위:스페이싱으로 구분 id class 가능
+    - 자식:>로 범위 지정 바로 하위요소만 적용
+*/
+/* #list li:last-of-type{
+    color:red;
+} */
+/* #list>li:last-of-type{
+    color:red;
+} */
+
+/* 형제선택자 */
+
+/* 1. 일반 형제 선택자 결합(~)
+    - 뒤에 나온 선택자만 적용가능 */
+/* code ~ .red{
+    color:red;
+} */
+/* 2. 인접 형제 선택자 결합(+)
+    - 인접한 요소가 해당할경우에 적용 */
+/* .red + div{
+    Background-color:blue;
+} */
+
+
+/* 그룹화 */
+/* 
+p, span{
+    color: purple;
+} */
+
+
+/* Universal Selector 범용 선택자 
+    * {
+      color: red;
+    }*/
+
+/* p + * {
+    color: red;
+} */
+
+
+/* 상속 제어하기 - initial, inherit, unset 
+    - 상속이 되지않는 프로퍼티도 있다*/
+div{
+    border: 1px solid silver;
+    margin: 2px;
+}
+
+/* .parent {
+    color: blue;
+    font-size: 7px;
+}
+
+.child2{
+    all: initial;
+} */
+
+/* .child1{
+    color:red;
+}
+
+.parent1, .parent2{
+    color: blue;
+} */
+
+/* .parent2 *{
+    all: inherit;
+} */
+
+
+
+/* unset
+
+1. 부모로부터 상속받은 값이 있을 때 : inherit
+2. 부모로부터 상속받은 값이 없을 때 : initial
+
+*/
+
+/* .parent2 .child1{
+    all: unset;
+} */
+
+
+/* 캐스캐이딩 원칙 */
+
+/* 스타일 우선순위
+
+   1. 선언된 곳
+   2. 명시도 (적용범위가 적을수록 명시도가 높은 것!)
+   3. 코드 위치
+*/
+
+#box{
+    color: blue;
+}
+
+.class-box{
+    color: red;
+}
+
+div{
+    color: purple !important;
+}
+/* 
+
+!important
+inline style>
+ID > 
+Class/Attribute?Pseudo Class >
+Type(tag) >
+* >
+inherited
+
+*/
