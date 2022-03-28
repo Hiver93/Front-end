@@ -1,0 +1,178 @@
+/* 
+폰트/텍스트 관련속성
+
+font-size,
+font-style,
+font-weight
+ */
+
+ /* font-size
+    - 대부분 16px이 기본
+    - large xx-small 등 키워드로도 사용가능 */
+/* font-style
+    - 대부분 italic과 oblique을 사용 */
+/* font-weight 
+    - 폰트의 굵기(기본은 400)  
+    - 키워드와 100단위 숫자*/
+ /* .text{
+    font-size: 80%;
+    font-style: oblique;
+    font-weight: bold;
+ } */
+
+
+ /*
+font-family
+line-height
+  */
+
+/* font-family
+    - 여러 폰트들을 나열하여 
+    사용자의 환경에서 사용가능한 폰트일경우 사용됨
+    - 마지막으로는 제네릭폰트 
+    - 스페이싱이 있으면 따옴표로 감싸준다
+    */
+/* line-height
+    - 줄의 높이
+    - 글꼴 별로 다르다
+    - 글꼴 별로 제각각다르게 보이는 것을 막기위해 지정해둠
+ */
+ /* p{
+     font-size:24px;
+     line-height: 2.0;
+ }
+.text{
+    font-family:'Times New Roman', Times, serif;
+    
+} */
+
+
+/* font 단축속성
+    - 6가지 단축속성
+    - size, family는 필수 포함속성
+    - style, varient, weight, height 는 선택 속성
+    - 위에 단독 속성을 적고 단축속성 작성하면 이니셜로 돌아감    
+    */
+/* 
+font-style font-weight font-height
+ 는 사이즈 앞에 작성 
+ */
+
+/* .default{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.text{
+    color: red;    
+
+    font: italic bold 20px 'Times New Roman', Times, serif;
+} */
+
+
+
+/* letter-spacing word-spacing
+    - 기본값은 폰트를 만든사람이 정해놓음
+    - px을 적으면 기본에 그만큼 더함(음수 가능)
+ */
+ /* .text{
+     letter-spacing: -1px;
+     word-spacing: 10px;
+ } */
+
+
+ /* text-align
+    - 텍스트 정렬
+    - 블록내에서 정렬
+    - 인라인요소의 경우 적용해도 의미가 없다 
+    - 부모요소에 적용시켜 접근*/
+
+/* p, span{
+    background-color: rosybrown;
+}
+
+.container{
+    text-align: center;
+}
+.block{
+    text-align: center;
+}
+.inline{
+    text-align: right;
+} */
+
+
+
+/* text-indent
+    - 들여쓰기
+    - 상속됨
+    - 블록요소에만 적용
+*/
+/* .paragraph1{
+    text-indent: 20px;
+}
+
+.container{
+    text-indent: 50%;
+}
+
+.inline{
+    text-indent: 30px;
+} */
+
+
+
+/* text-decoration
+    - 네가지의 프로퍼티를 한번에 적용
+    - 이 속성은 순서에 영향이 없다
+    - 라인은 붙여 쓴다 */
+
+/* text-decoration-line
+    - none
+    - underline
+    - overline
+    - line-through
+    - 한번에 여럿을 적용가능
+    */
+
+/* text-decoration-style
+    - solid(initial)
+    - double
+    - dotted
+    - dashed
+    - wavy */
+/* 
+span{
+    color: blue;
+    text-decoration: line-through red 3px wavy;
+} */
+
+
+/* word-break
+    - 동양권 서양권 다르게 작용
+    - break-all keep-all 
+    - 줄바꿈 관련*/
+
+/* p{
+    width: 120px;
+    background-color: cadetblue;
+}
+
+p[lang="en"]{
+    word-break: break-all;
+}
+p[lang="ko"]{
+    word-break: keep-all;
+} */
+
+
+/* text-transform
+    - 알파벳 일본어 독일어 터키 등 정해진 몇가지 언어만 사용가능
+    - capitalize
+    - uppercase
+    - lowercase
+    - 실제로 html코드가 변경되는것은 아님
+     */
+.container p:last-of-type{
+    color: blue;
+    text-transform: capitalize;
+}
