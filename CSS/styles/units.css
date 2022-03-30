@@ -1,0 +1,104 @@
+/* length
+    - 절대길이, 상대길이
+    - 절대길이
+        - px을 주로 사용함
+        - pt는 인쇄와 관련해서 사용된다. 
+        - cm, mm, in 등 다른 값들은 실제로는 px로 계산됨 
+        - 설정해놓으면 사용자의 설정에 따라 변하지 않는다
+        - 따라서 사용자의 편의를 위해 상대길이(em, rem 등)를 사용하는것이 추천된다.
+    - 상대길이
+        - 1em === 부모의 font-size. % 비슷하게 사용됨
+        - 1rem === root의 폰트사이즈이다.
+        - vw, vh
+*/
+
+/* 
+length
+
+1. 상대길이
+    a. 글꼴 상대기이 - em, rem...
+    b. 뷰포트 상대길이 - vh, vw 높이와 너비
+        (뷰포트는 웹화면의 넓이)
+
+*/
+
+/* div{
+}
+
+.parent{
+    color: blue;
+    font-size: 2rem;
+}
+
+.child{
+    color: red;
+    font-size: 1.5rem;
+} */
+
+
+/* vw, vh */
+/* 
+body{
+    margin: 0;
+}
+
+.container{
+    background-color: coral;
+    height: 50vh;
+    width: 50vw;
+} */
+
+
+/* vmin, vmax
+    - 가로 세로를 비교해서 긴쪽이 vmax 다른쪽이 vmin
+    - 가로모드 세로모드에 대응할때 유용
+*/
+/* body{
+    margin: 0;
+}
+
+.container{
+    background-color: blue;
+    width: 100vmin;
+    height: 100vmin;
+} */
+
+
+
+/* percentage
+    - 부모의 값에 상대적으로 적용 */
+
+/* body{
+    margin: 0;
+}
+.parent{
+    width: 50%;
+    height: 100px;
+    background-color: blue;
+}
+
+.child{
+    width: 50%;
+    height: 30%;
+    background-color: indianred;
+} */
+
+
+/* 함수 표기법
+    -calc(), min(), max()
+*/
+
+/* calc(100%-50px) 
+    - 여러단위를 이용하여 계산가능
+    - + -  연산자의 좌우에는 공백이 있어야한다
+    - * / 는 수만을 이용해서 사용
+    - * / 도 좌우에 공백 넣어서 사용하도록 하자
+
+*/
+.container{
+    /* width: calc(100% / 3); */
+    width: min(100%, 200px);
+    height: 200px;
+
+    background-color: wheat;
+}
