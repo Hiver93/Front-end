@@ -1,0 +1,225 @@
+/* .box{
+    width: 200px;
+    height: 200px;
+    
+    padding: 20px;
+    border: 20px solid blue;
+    margin: 20px;
+} */
+
+/* 
+    크기 - width, height
+        - 초기값 auto
+        - 상속 되지 않음
+    width
+    - 요소의 너비 설정
+*/
+/* 
+.box{
+    width: 300px;
+    height: 100px;
+}
+
+.block{
+    width: 300px;
+    height: 100px;
+    background-color: wheat;
+}
+.inline{
+    width: auto;
+    height: auto;
+    background-color: yellowgreen;
+} */
+
+
+/* max-width, min-width
+   max-height, min-height
+   - 상속 되지 않음 */
+/* #parent{
+    width: 800px;
+    height: 300px;
+    background-color: lightcoral;
+}
+
+#child{
+    width: 50%;
+    max-width:300px;
+    height: 100px;
+
+    background-color: lightgreen;
+} */
+
+
+/* margin 
+    - 위 오른 아래 왼 네가지 방향
+    - 1: 네가지며 적용
+    - 2: 세로 가로
+    - 3: 위 가로 아래
+    - 4: 위 오른 아래 왼
+    - initial값은 0
+    
+    - 퍼센테이지 적용시 부모의 마진값이 아닌
+        부모의 width값을 따라감
+    */
+/* #parent{
+    width: 300px;
+    height: 200px;
+
+    border: 5px solid blue;
+}
+
+#child{
+    width: 50px;
+    height: 50px;
+
+    margin: 30%;
+
+    border: 5px solid tomato;
+} */
+
+
+/* margin collapsing (마진 상쇄)
+    - 여러불록 요소들의 위/아래 margin이 경우에 따라 
+    가장 큰 크기를 가진 marginn으로 결합(상쇄)되는 현상
+    
+    1. 인접 형제
+        - 두 형제 효소의 위/아래 여백이 만나 상쇄된다.*/
+/* 1. 인접형제 */
+/* .box{
+    width: 50px;
+    height: 50px;
+    background-color: tomato;
+
+    margin-top: 10px;
+    margin-bottom: 20px;
+} */
+
+/* 2.부모-자식 */
+/* #parent{
+    width: 100px;
+    height: 100px;
+
+    margin-top: 30px;
+    border: 1px solid red;
+
+    background-color: cadetblue;
+}
+#child{
+    width: 30px;
+    height: 30px;
+
+    margin-top: 40px;
+
+    background-color: indianred;
+} */
+
+/* 3. 빈블록
+    - border, padding, content가 없고, height 또한 존재하지 않으면
+    해당 블록의 margin-top과 margin-bottom이 상쇄된다. */
+
+
+
+/* padding
+    - 네 방향 안쪽 여백 영역
+    - margin처럼 설정
+    - collapsing이 발생하지 않음
+    - 음수 값은 사용할 수 없다
+    - pecentage도 margin과 동일하게 사용가능
+        - 부모컨테이너의 너비의 백분율을 적용
+        - height의 값을 적용하는 것이 아니다 */
+/* #parent{
+    width: 200px;
+    height: 300px;
+
+    background-color: skyblue;
+}
+
+#child{
+    width: 100px;
+    height: 100px;
+
+    padding-top: 10%;
+
+    background-color: orange;
+}
+#grand-child{
+    width: 50px;
+    height: 50px;
+
+    background-color: red;
+} */
+
+
+/* border 
+    - border-style
+        - 기본은 none / dotted 등 사용가능
+        - 각 테두리마다 다르게 적용가능
+        - none으로 적용하면 width color를 적용하지 않고
+         무조건 값이 0이 된다.
+    - border-width
+        - 테두리의 두께
+        - thin medium thick 중 선택 가능
+        - 계산값은 브라우저별로 다를 수 있다.
+        - 정확한 픽셀값이 필요하면 length를 사용
+    - border=color
+        - 테두리의 색
+        - 각 테두리마다 사용 가능*/
+/* .box{
+    width: 300px;
+    height: 300px;
+
+    border-style: none;
+    border-width: 10px;
+    border-color: red;
+
+    background-color: rgb(175,207,233);
+} */
+
+/* border 단축속성
+    - width style color 값을 적용
+    - 넣지 않은 값은 initial값을 적용
+    - 순서는 영향을 주지 않는다 */
+/* outline 선택된 항목을 강조 */
+/* .box{
+    width: 300px;
+    height: 300px;
+
+    border: solid red 5px;
+
+    background-color: skyblue;
+} */
+
+/* border-radius
+    - 테두리를 둥글게 만듬 
+    - 반지름의 값이 px
+    - length나 percentage를 사용가능
+    - 백분율은 세로와 가로를 모두 적용
+    - 10시 2시 5시 8시 순으로 각각 적용가능*/
+/* .box{
+    width: 300px;
+    height: 500px;
+
+    border: 5px solid red;
+    border-radius: 50px 10px 20px 30px;
+} */
+
+
+/* box-sizing
+    - 요소의 너비와 높이를 계산하는 방법을 지정
+    - initial 값 content-box
+    - border-box
+    - */
+*{
+    box-sizing: border-box;
+}
+.box{
+    width: 300px;
+    height: 200px;
+
+    padding: 20px;
+    border: 30px solid blue;
+
+    box-sizing: border-box;
+
+    background-color: skyblue;
+}
