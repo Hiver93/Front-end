@@ -1,0 +1,136 @@
+/* color
+    - 키워드 사용(blue,transparent 등)
+    - RGB 3차원 좌표계사용 (#+16진수 표기법 또는 rgb(), rgba()의 함수형 표기법)
+    - rgba() a는 투명도 0~1
+*/
+/* div{
+    height: 100px;
+    width: 100px;
+    background-color: rgba(0, 0, 255,0.8);
+} */
+
+/* opacity
+    - <alpha-value> 채널의 불투명도(알파 채널의 값)를
+    나타 내는 0.0이상 1.0 이하의 수 또는 0%~100% 이하의 percentage
+    - 내부의 모든 요소의 불투명도가 바뀐다.
+    background-color는 내부 요소는 바뀌지 않는다.
+*/
+/* .floating-box{
+    width: 150px;
+    height: 150px;
+
+    position: fixed;
+    top: 10px;
+    left: 10px;
+
+    background-color: rgba(100,100,100,0.5);
+    opacity: 0.5;
+    
+}
+div{
+
+} */
+
+
+/* backgorund-color, background-image
+    - background-color는 이미지보다 뒤에 렌더링
+    이미지가 투명한 부분을 가지면 그곳에 보인다
+    - background-image
+        - 기본값은 none
+        - url:(상대경로);
+        = 크기가 맞지 않으면 그림이 여러개 나온다
+*/
+/* 
+.floating-box{
+    width: 400px;
+    height: 400px;
+
+    position: fixed;
+    top: 10px;
+    left: 10px;
+
+    background-image: url("https://interactive-examples.mdn.mozilla.net/media/examples/lizard.png");
+} */
+
+
+/* background-repeat 
+    - 기본적으로 background-image는
+    요소의 배경 역역을 채울때까지 반복한다
+    - repeat-x, repeat-y로 가로축이나 세로축으로
+    반복
+    - 전부는 repeat, 반복하지 않게는 no-repeat
+*/
+
+/* background-position
+    - __ __; x축 y축 
+    - repeat와 같이 사용 가능
+    - 키워드사용 가능 top center bottom left right
+    순서는 무관
+    키워드를 하나만 입력하면 나머지는 자동 center
+    -
+*/
+/* .box{
+    width: 300px;
+    height: 500px;
+
+    border: solid red;
+
+    background-image: url("https://interactive-examples.mdn.mozilla.net/media/examples/moon.jpg");
+    
+    background-repeat: no-repeat;
+
+    background-position: top right;
+} */
+
+
+/* background-origin
+    - 배경의 원점을 
+    border 시작점, border 내부, padding 내부 중 하나로 지어
+    - boder-box, padding-box, content-box
+    -
+*/
+/* .box{
+    width: 300px;
+    height: 500px;
+
+    border: 30px dashed red;
+    padding: 30px;
+
+    background-image: url("https://interactive-examples.mdn.mozilla.net/media/examples/moon.jpg");
+    background-repeat: no-repeat;
+
+    background-origin: border-box;
+} */
+
+
+/* background-size
+    - 배경이미지의 크기를 설정
+    - 기본값은 auto(이미지가 가진 크기로 나온다)
+    - 키워드 auto contain cover
+    - 숫자값 px rem em percentage
+    - cover 이미지가 찌그러지지 않는 한도내에서
+    제일 크게 설정
+    - contain 이미지가 잘리지 않게 설정
+    - 숫자값을 넣은 경우 이미지비율을 찌그러트린다
+        - 한가지 값만 넣게되면 비율을 그대로 유지
+        - pecentage는 cover와 달리 빈공간을 채우지 않는다
+
+*/
+/* .box{
+    height: 400px;
+
+    border: blue 5px solid;
+
+    background-image: url("https://interactive-examples.mdn.mozilla.net/media/examples/hand.jpg");
+    background-repeat: no-repeat;
+    background-color: cadetblue;
+
+    background-size: 200px;
+} */
+
+
+/* background 단축속성
+    - 색상 이미지 원점 크기 반복 origin 등 설정
+    - attachment clip color image origin position repeat size
+    
+*/
