@@ -132,5 +132,11 @@ div{
 /* background 단축속성
     - 색상 이미지 원점 크기 반복 origin 등 설정
     - attachment clip color image origin position repeat size
-    
+    - 띄어쓰기를 이용해 구분
+    - color는 마지막
+    - size/position
+    size는 position바로 뒤에 쓰며 /로 구분
 */
+.box{
+    background: green;
+}
