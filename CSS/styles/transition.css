@@ -1,0 +1,94 @@
+/* transition
+    - 웹페이지가 다이나믹하게 보이도록 도와줌
+    - A의 CSS에서 B의 CSS로 변한다
+    - A상태에서 B상태로 변하는 시간의 개념이 필요
+    - delay, duration, property, timing-function
+*/
+
+
+/* transition-property
+    - 기본은 none
+    - all: 모든 css를 바꾸겠다
+    - 값을 입력하면 그부분을 변경
+   transition-duration
+    - 어느정도의 시간을 들여 바꿀 것인지
+    - <time>자료형 값은 s, ms 1s == 1000ms
+
+    - 기존 항목에 설정하면 호버 전후로 적용
+    - 호버항목에만 설정시 호버할때만 설정
+*/
+/* transition-delay transition-time-function
+    - delay 트렌지션을 지연시킴
+        - 값으로 time을 가짐
+        - 여러 항목에 각기 다른 딜레이를 주면 차례로 움직이는 모습을 보일 수 있다
+
+    - time-function
+        - 중간과정의 시간을 조절할 수 있다
+        - 키워드 사용
+            - 기본값은 ease
+            - ease ease-in easeout easeinout linear등
+            - cubic-bezier로 직접 입력할 수 있다.
+*/
+/* .box{
+    width: 300px;
+    height: 80px;
+    background-color: blue;
+    font-size: 50px;
+    color: white;
+
+    
+    transition-property: all;
+    transition-duration: 2s;
+    transition-delay: 0.1s;
+    transition-timing-function: linear;
+}
+
+.box:hover {
+    width: 340px;
+    background-color: indianred;
+    color: black;
+    font-size: 60px;
+    height: 400px;
+} */
+
+
+
+/* transition 단축속성 
+    - delay duration property time-fuction
+    - 시간속성이 하나라면 duration 
+    둘이라면 duration이 앞 delay가 뒤
+    - property duration time-fuctin delay 순이
+    일반적
+*/
+/* .box{
+    width: 300px;
+    height: 80px;
+    background-color: blue;
+    font-size: 50px;
+    color: white;
+
+    transition: all 2s ease-in-out 0.1s;
+}
+
+.box:hover {
+    width: 340px;
+    background-color: indianred;
+    color: black;
+    font-size: 60px;
+    height: 400px;
+} */
+
+.box{
+    width: 100px;
+    height: 100px;
+    border: 10px solid seagreen;
+    background-color: rgb(204,253,225);
+    border-radius: 30px;
+
+    transform-origin: bottom right;
+    transition: all 1s ease-in-out;
+}
+
+.box:hover{
+    transform: rotate(360deg);
+}
