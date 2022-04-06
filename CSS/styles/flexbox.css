@@ -1,0 +1,364 @@
+/* flexbox
+    - 블록요소를 가로로 나열하고 싶을때
+    기존의 디스플레이나 플로트 속성으로
+    조정을 할 경우 여러 문제가 있다.
+
+    - 가로 혹은 세로 요소를 정렬할때
+    유동적으로 자연스럽게 할 수 있다.
+
+    - 1차원 정렬만을 
+*/
+/* flexbox 관련 용어
+    - flex container 부모
+      flex item 자식
+      main axis 주축이 되는 축
+      cross axis main axis에 수직이 되는, 교차하는 축
+*/
+
+/* display
+    - 1. 바깥쪽들과의 관계
+    - 2. 안쪽의 자식들을 어떻게 배치할지
+    - 기존 block, inline, inline-block
+    - 키워드를 inline-flex와 같은 식으로 사용가능
+*/
+/* .container{
+    border: 5px dashed orange;
+
+    display: flex;
+}
+
+.item{
+    width: 50px;
+    height: 50px;
+    background-color: paleturquoise;
+    border: 3px solid blue;
+} */
+
+
+/* flex-direction
+    - flex container 내의 아이템을 배치할 때 사용할
+    주축 및 방향(정방향, 역방향)을 지정할 때 사용
+    - 주축 기본은 가로 반대는 세로
+    - 방향 정방향은 왼->오 위->아래
+    - row column / row-reverse column-reverse
+*/
+/* .container{
+    height: 500px;
+    border: 5px dashed orange;
+
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.item{
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    background-color: paleturquoise;
+    border: 3px solid blue;
+    font-size: 30px;
+}  */
+
+
+/* flex-wrap
+    - 요소를 강제로 한줄에 배치시킬건지 
+    여러행으로 나누어 배치시킬건지
+    - 시작점은 flex-direction을 따른다
+    - 기본값은 nowrap
+    - wrap 요소가 여러행에 걸쳐 배치된다
+    - wrap-reverse 시작점과 끝점이 반전
+*/
+/* flex-flow 단축속성
+    - direction과 wrap을 나열해서 사용
+*/
+/* .container{
+    height: 250px;
+    border: 5px dashed orange;
+
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.item{
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    background-color: paleturquoise;
+    border: 3px solid blue;
+    font-size: 30px;
+} */
+
+
+/* order
+    - flex item에서 사용되는 속성
+    - 플렉스 또는 그리드 컨테이너 안에서 현재요소의
+    배치순서를 결정한다.
+    - order값의 오름차순으로 정렬된다.
+    - 정수를 사용 
+    - 기본값은 0
+    - 눈에 보이는 것만 변경
+*/
+/* .container{
+    height: 250px;
+    border: 5px dashed orange;
+
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.item{
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    background-color: paleturquoise;
+    border: 3px solid blue;
+    font-size: 30px;
+}
+
+.item:nth-child(3){
+    order: 1;
+}
+.item:nth-child(5){
+    order:8;
+}
+.item:nth-child(4){
+    order:-100;
+} */
+
+
+/* flex-grow
+    - 요소가 container내부에서 할당받는 자리를 조정
+    - 기본값은 0
+    - 할당이 가능한 공간을 나누어 사용
+    - number 값 사용가능 (음수는 불가)
+    - 형제요소가 동일한 값을 가지면 동일한 공간을 할당
+    - 값이 다르면 값만큼씩의 비율 지분을 가져감
+*/
+/* .container{
+    height: 250px;
+    border: 5px dashed orange;
+
+    display: flex;
+}
+
+.item{
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    background-color: paleturquoise;
+    border: 3px solid blue;
+    
+}
+
+.item:nth-child(2){
+    flex-grow: 2;
+}
+.item:nth-child(3){
+    flex-grow: 1;
+} */
+
+
+/* flex-shrink
+    - item들의 요소가 크기가 컨테이너 요소의 크기보다
+    클 때 축소됩니다.
+    - 기본값은 1
+    - 형제요소들이 값이 같으면 동일한 비율로 줄어든다.
+    - 다르면 줄어든 영역을 가진 값의 비율 지분만큼 줄인다.
+*/
+/* .container{
+    height: 250px;
+    border: 5px dashed orange;
+
+    display: flex;
+}
+
+.item{
+    width: 200px;
+    height: 50px;
+    margin: 5px;
+    background-color: paleturquoise;
+    border: 3px solid blue;
+    
+}
+
+.item:nth-child(1){
+    flex-shrink: 0;
+}
+.item:nth-child(3){
+    flex-shrink: 2;
+} */
+
+
+/* flex-basis
+    - 아이템의 초기 크기를 지정
+    - 따로지정하지 않는다면 width값을 가진다
+    - em rem per 등 시용
+*/
+/* .container{
+    height: 200px;
+    border: 5px dashed orange;
+
+    display: flex;
+}
+
+.item{
+    height: 50px;
+    margin: 5px;
+    background-color: paleturquoise;
+    border: 3px solid blue;
+    font-size: 30px;
+
+
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.item:nth-child(1){
+    flex-grow: 5;
+}
+.item:nth-child(2){
+    flex-grow: 1;
+}
+.item:nth-child(3){
+    flex-grow: 3;
+} */
+
+
+/* flex 단축속성
+    - grow, shrink, basis
+    - 0, 1, auto 초기값
+    - 숫자 값을 사용하면 basis의 값은 auto가 아니라 0이 된다
+    - 첫번째값은 number이어야 한다.(grow)
+    - 값 
+        - initial 0 1 auto
+        - auto 1 1 auto
+        - none 0 0 auto
+*/
+/* .container{
+    height: 200px;
+    border: 5px dashed orange;
+
+    display: flex;
+}
+
+.item{
+    height: 50px;
+    margin: 5px;
+    background-color: paleturquoise;
+    border: 3px solid blue;
+    font-size: 30px;
+
+    flex: auto;
+} */
+
+
+/* justify-content
+    - 주축을 기준으로 아이템을 어떻게 정렬할건지
+    - flex-start 주축시작지점부터 정렬
+    - flex-end 주축 끝지점부터 정렬
+    - center 주축을 기준으로 가운데 정렬
+    - space-between 가운데 간격을 자동 설정
+    - space-around 각 요소 앞뒤로 같은 크기의 간격을 적용
+*/
+/* .container{
+    height: 500px;
+    border: 5px dashed orange;
+    flex-direction: row-reverse;
+    display: flex;
+    
+}
+
+.item{
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+    background-color: paleturquoise;
+    border: 3px solid blue;
+    font-size: 30px;
+}
+.container:nth-child(1){
+    justify-content: space-between;
+}
+.container:nth-child(2){
+    justify-content: space-around;
+} */
+
+
+/* align-items
+    - 교차축에 관련된 정렬을 변경
+    - 주축을 교차축중 어디에 적용할건지 
+    - flex-start flex-end stretch center
+*/
+/* .container{
+    height: 400px;
+    border: 5px dashed orange;
+    display: flex;
+    flex-wrap: wrap;
+ 
+    justify-items: space-between;
+    align-items: flex-start;
+}
+
+.item{
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    background-color: paleturquoise;
+    border: 3px solid blue;
+    font-size: 30px;
+} */
+
+
+/* align-content
+    - 교차축의 요소를 어떤식으로 정렬시킬지
+    - flex-start flex-end center
+    space-between space-around
+*/
+/* .container{
+    height: 400px;
+    border: 5px dashed orange;
+    display: flex;
+    flex-wrap: wrap;
+ 
+    
+    align-content: space-around;
+}
+
+.item{
+    width: 150px;
+    height: 50px;
+    margin: 5px;
+    background-color: paleturquoise;
+    border: 3px solid blue;
+    font-size: 30px;
+}  */
+
+
+/* align-self
+    - 기존 align-items는 자신의 한줄만 적용
+    - 요소마다 설정 가능
+*/
+.container{
+    height: 400px;
+    border: 5px dashed orange;
+    display: flex;
+    flex-wrap: wrap;
+ 
+    
+    align-items: center;
+}
+
+.item{
+    width: 150px;
+    height: 50px;
+    margin: 5px;
+    background-color: paleturquoise;
+    border: 3px solid blue;
+    font-size: 30px;
+
+} 
+
+.item:nth-child(4){
+    height: auto;
+    align-self: stretch;
+}
