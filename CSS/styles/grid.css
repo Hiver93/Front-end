@@ -1,0 +1,440 @@
+/* grid layout
+    - flex box는 기본적으로 1차원 정렬을 관리
+    - grid는 이차원 레이아웃을 직접 직관적으로 구축 할 수 있는
+    기능이 있다.
+    - columns 와 rows로 구성된다.
+    - gutters(gap) 행과 열 사이에 공백
+    - 
+*/
+/* .container{
+    border: 5px dashed orange;
+
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    width: 150px;
+}
+
+.item{
+    background-color: paleturquoise;
+    border: 3px solid blue;
+    font-size: 30px;
+} */
+
+/* grid-template-rows grid-template-columns
+    - 몇개의 행과 열을 만들 것인지
+    - px 값으로 너비와 높이를 설정한다.
+    - fr로 설정한경우 전체 비율을 요소가 나누어 가진다.
+    - repeat() 함수 표기법
+        - repeat(반복횟수, 값)
+*/
+/* .container{
+    border: 5px dashed orange;
+    height: 400px;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.item{
+    background-color: paleturquoise;
+    border: 3px solid blue;
+    font-size: 30px;
+} */
+
+
+/* grid-template-areas 
+    - 각 아이템들의 이름표를 사용하여 영역설정
+    - . 을 이용해 빈칸으로 만들 수 있다
+    - 사각형의 형태로 영역을 설정해주어야한다.
+*/
+/* .container{
+    border: 5px dashed orange;
+    height: 400px;
+    width: 400px;
+
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(3,1fr);
+    grid-template-areas:
+    "hd hd hd hd . "
+    "ma ma ma .  sb"
+    ".  ft ft ft ft"
+    
+}
+
+.item{
+    background-color: paleturquoise;
+    border: 3px solid blue;
+    font-size: 20px;
+}
+
+.header{
+    grid-area: hd;
+}
+
+.main{
+    grid-area: ma;
+}
+
+.sidebar{
+    grid-area: sb;
+}
+
+.footer{
+    grid-area: ft;
+} */
+
+
+/* row-gap(grid-row-gap) column-gap 
+    - 행이나 열의 간격을 수정
+    - gap 단축속성
+        gap: row-gap columsgap; 순서
+*/
+/* .container{
+    border: 5px dashed orange;
+    height: 400px;
+    width: 400px;
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(4,1fr);
+
+    gap: 20px 50px
+}
+
+.item{
+    background-color: paleturquoise;
+    border: 3px solid blue;
+    font-size: 20px;
+} */
+
+
+/* grid-auto-rows grid-auto-columns
+    - template의 범위를 넘는 요소에 대해 
+    암시적으로 높이와 너비를 지정
+*/
+/* .container{
+    border: 5px dashed orange;
+
+    display: grid;
+    
+    grid-template-rows: 100px 150px 80px;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    grid-auto-rows: 100px;
+    grid-auto-columns: 50px;
+
+
+}
+
+.item{
+    background-color: paleturquoise;
+    border: 3px solid blue;
+    font-size: 20px;
+} */
+
+
+/* grid-auto-flow
+    - 각 아이템이 어떻게 자리를 잡을 것인지 설정
+    - 어떤 방향으로 아이템이 흘러갈 것인지 
+    - 값: row, column dense
+    - dens를 붙이게 되면
+        빈 영역에 들어갈 수 있는 값들을 채워넣는다.
+*/
+/* .container{
+    border: 5px dashed orange;
+
+    display: grid;
+    
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    grid-auto-flow: row dense;
+}
+
+.item{
+    background-color: paleturquoise;
+    border: 3px solid blue;
+    font-size: 20px;
+}
+
+.item:nth-child(2){
+    grid-column: span 3;
+} */
+
+
+
+/* grid 단축속성
+    - 6가지
+    - 외재적인 속성
+        - 명시적인 속성
+        - template로 시작하는
+        - template-rows columns, template-areas
+    - 내재적인 속성
+        - 암식적인 속성
+        - grid-auot로 시작하는
+        - auto-rows columns, auto-flow
+
+    - /를 기준으로 구분함
+        - 행에 대한 속성 row / 열에 대한 속성 col
+        - 명시적속성 / 암시적속성을 혼합해서 사용할 수 있다
+*/
+/* .container{
+    border: 5px dashed orange;
+
+    display: grid;
+
+    grid: 1fr 2fr / auto-flow 100px 200px;
+}
+
+.item{
+    background-color: paleturquoise;
+    border: 3px solid blue;
+    font-size: 20px;
+} */
+
+
+/* justify-content
+    - 컨테이너의 남는 공간을 어떻게 활용할 것인지 정의
+    - 기본값은 start
+    - start center end space-around space-between
+
+   align-content
+    - 교차축에서의 위치를 결정
+
+*/
+/* .container{
+    border: 5px dashed orange;
+
+    width: 100%;
+    height: 500px;
+    display: grid;
+
+    grid-template-rows: repeat(3, 100px);
+    grid-template-columns: repeat(3, 100px);
+
+    align-content: space-around;
+    justify-content: space-around;
+}
+
+.item{
+    background-color: paleturquoise;
+    border: 3px solid blue;
+    font-size: 20px;
+} */
+
+
+
+/* justify-items align-items 
+    - justify-content와 달리
+    하나의 아이템에 대한 정렬을 의미
+    - 틀 안에서의 아이템을 어떻게 정렬 할 것인지
+    - 
+    - 기본값은 stretch
+
+*/
+/* .container{
+    border: 5px dashed orange;
+
+    width: 100%;
+    height: 500px;
+    display: grid;
+
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    
+    justify-items: center;
+    align-items: start;
+}
+
+.item{
+    background-color: paleturquoise;
+    border: 3px solid blue;
+    font-size: 20px;
+}
+
+.item:nth-child(1){
+    width: 50px;
+    height: 50px;
+}
+
+.item:nth-child(2){
+    justify-items: end;
+} */
+
+
+/* justify-row justify-column 단축속성
+    - grid-row(column): 시작선 / 끝선; 으로 사용
+    - grid=row-end, grid-row-start
+    - 어디서 시작하고 어디로 끝날지 결정
+    - 값은 구획을 나누는 선이 기준
+    - 음수도 사용 가능
+        - 명시적으로 작성한 템플릿에게서만 가능
+    - span을 이용해 기준점에서 몇칸을 사용할 것인지
+    설정 가능하다
+
+*/
+/* .container{
+    border: 5px dashed orange;
+
+    display: grid;
+    grid-template-rows: repeat(5,100px);
+    grid-template-columns: repeat(3,1fr);
+}
+
+.item{
+    background-color: paleturquoise;
+    border: 3px solid blue;
+    font-size: 24px;
+}
+
+.item:first-child{
+    background-color: coral;
+
+    grid-row: 4 / span 2;
+    grid-column: 2/-1;
+} */
+
+
+
+/* grid-area 단축속성
+    - row(col)-start row(col)-end 4가지의 단축속성
+    - 이름부여의 기능도 있다.
+    - row-start / col-start / row-end / col-end의 순서
+    - 
+*/
+/* .container{
+    border: 5px dashed orange;
+
+    display: grid;
+    grid-template-rows: repeat(5,100px);
+    grid-template-columns: repeat(3,1fr);
+}
+
+.item{
+    background-color: paleturquoise;
+    border: 3px solid blue;
+    font-size: 24px;
+}
+
+.item:first-child{
+    background-color: coral;
+
+    grid-area: 4 / 2/ span 2/ -1;
+} */
+
+
+/* order 
+    - 컨테이너안에서의 배치 순서를 지정
+    - 정수값을 받는다.
+    - 기본값은 0
+*/
+/* .container{
+    border: 5px dashed orange;
+
+    display: grid;
+    grid-template-rows: repeat(3,100px);
+    grid-template-columns: repeat(3,1fr);
+
+    grid-auto-flow: column;
+}
+
+.item{
+    background-color: paleturquoise;
+    border: 3px solid blue;
+    font-size: 24px;
+}
+
+.item:nth-child(5) {
+    order: -1;
+}
+
+.item:nth-child(3){
+    order: 1;
+} */
+
+
+/* z-index
+    - z축에서의 우선순위를 정한다.
+    - 수가 높을 수록 우선순위가 높다.
+    - 정수값을 받음
+*/
+/* .container{
+    border: 5px dashed orange;
+
+    display: grid;
+    grid-template-rows: repeat(3,100px);
+    grid-template-columns: repeat(3,1fr);
+
+}
+
+.item{
+    background-color: paleturquoise;
+    border: 3px solid blue;
+    font-size: 24px;
+    opacity: 0.7;
+}
+
+.item:first-child{
+    grid-row: 1/ span 2;
+    grid-column: 1 / span 2;
+}
+
+.item:nth-child(2){
+    grid-row: 1/2;
+    grid-column: 2/4;
+
+    z-index: -1;
+} */
+
+
+
+/* grid의 단위
+    - fr, min-content, max-content
+    - 절대길이와 fr을 혼용해서 사용가능하다
+    - min-content 가장 긴 단어를 가진 크기까지 줄어든다
+    - max-content 컨텐츠를 자르지 않는 선까지 차지
+*/
+/* .container{
+    border: 5px dashed orange;
+
+    display: grid;
+    grid-template-rows: repeat(3,200px);
+    grid-template-columns: max-content 1fr 1fr;
+
+}
+
+.item{
+    background-color: paleturquoise;
+    border: 3px solid blue;
+} */
+
+
+/* auto-fill auto-fit
+    - 남는 공간에 요소를 더 배치하고 싶을 경우 사용
+    - fill 공간에 배치할수 있는 수만큼의 값을 할당
+    - repeat(auto-fill,minmax(100px,1fr);
+        - 로 사용하면 100px값의 요소가 들어갈 공간이 생기면
+        자동 할당
+    - auto-fit
+        - 요소가 부족하여 빈공간이 생겼을 경우 공간을 채움
+
+*/
+/* minmax() 함수
+    - minmax(min, max)
+    - 최소크기와 최대크기를 지정
+*/
+.container{
+    border: 5px dashed orange;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(150px, 1fr));
+    grid-auto-rows: 50px;
+
+}
+
+.item{
+    background-color: paleturquoise;
+    border: 3px solid blue;
+}
