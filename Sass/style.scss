@@ -1,0 +1,95 @@
+p{
+    span{
+        color: red;
+    }
+}
+
+span{
+    color: blue;
+}
+// &로 부모를 받아옴
+a{
+    &:hover,
+    &:focus{
+        color: red;
+    }
+}
+
+// Sass 7-1 패턴
+// 7개의 폴더로 나누어 한파일을 만들어 낸다
+/*abstracts
+    _variables.scss
+    _functions.scss
+    _mixins.scss
+    _placeholders.scss
+base
+    _reset.scss
+    _typegraphy.scss
+components
+    _buttons.scss
+    _carousel.scss
+    _cover.scss
+layout
+    _
+    _
+    _
+pages
+    _
+    _
+    _
+themes
+    _
+    _
+vendors
+    _
+    _
+
+main.scss
+*/
+
+/*
+@import './abstracts/variables.scss';
+등으로 임포트 해야함
+*/
+
+//variable 변수
+// $h1-size: 5em;
+// $h1-color: red;
+// $text-align: $h1-align;
+// 의 방법으로 선언
+
+// mixin 
+// 자주 쓰는 코드 집합
+// @mixin ellipse{
+//     text-overflow: ellipsis;
+//     white-space: wrap;
+//     overflow: hidden;
+// }
+
+// p{
+//     width: 300px;
+//     @include ellipse;
+// }
+
+// 매개변수를 받아올 수 있다
+// @mixin bg-img($bg-url, $bg-position: center){
+
+// }
+
+
+// function
+// @function half-opacity($color){
+//     $color: rgba($color, .5);
+//     @return $color;
+// }
+
+// h1{
+//     font-size: 10em;
+//     text-align: center;
+//     color: half-opacity(green);
+// }
+
+// 참고 링크
+// https://sass-lang.com/documentation
+// https://www.w3schools.com/sass/
+// https://poiemaweb.com/sass-basics
