@@ -1,0 +1,47 @@
+@charset "UTF-8";
+p span {
+  color: red;
+}
+
+span {
+  color: blue;
+}
+
+a:hover, a:focus {
+  color: red;
+}
+
+/*abstracts
+    _variables.scss
+    _functions.scss
+    _mixins.scss
+    _placeholders.scss
+base
+    _reset.scss
+    _typegraphy.scss
+components
+    _buttons.scss
+    _carousel.scss
+    _cover.scss
+layout
+    _
+    _
+    _
+pages
+    _
+    _
+    _
+themes
+    _
+    _
+vendors
+    _
+    _
+
+main.scss
+*/
+/*
+@import './abstracts/variables.scss';
+등으로 임포트 해야함
+*/
+/*# sourceMappingURL=style.css.map */
