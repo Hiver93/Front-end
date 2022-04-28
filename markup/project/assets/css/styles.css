@@ -136,6 +136,84 @@ textarea::-webkit-outer-spin-button {
   text-indent: -9999px;
 }
 
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #03c75a;
+  color: #fff;
+  z-index: 5000;
+}
+
+.container .place-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 48px;
+}
+
+.container .place-header .title {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.container .place-header .link-back {
+  display: flex;
+}
+
+.container .place-header .my-orders {
+  padding-right: 18px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.container .place-tab {
+  display: flex;
+  height: 46px;
+  background-color: #03b753;
+}
+
+.container .tab-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px;
+  width: 100%;
+}
+
+.container .tab-inner .tab {
+  flex: 1;
+  padding: 0 12px;
+  font-size: 16px;
+  text-align: center;
+  opacity: 0.7;
+}
+
+.container .tab-inner .tab.is-active {
+  font-weight: 700;
+  opacity: 1;
+}
+
+.container .tab-inner .tab.is-active .txt::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #fff;
+}
+
+.container .tab-inner .tab .txt {
+  position: relative;
+  display: inline-block;
+  padding: 0 4px;
+  line-height: 46px;
+}
+
 .dimmed-layer {
   position: fixed;
   top: 0;
@@ -178,6 +256,7 @@ textarea::-webkit-outer-spin-button {
 
 .order-type .icon {
   width: 100px;
+  height: auto;
 }
 
 .order-type .desc {
