@@ -192,3 +192,46 @@ let str_separator = fruits.join(";"); // 원하는 문자로 나눌 수 있다
 console.log(str_separator);
 let result = str_separator.split(";");
 console.log(result);
+
+
+// N차월 Array
+console.log("---------------------------------------------")
+let array = [
+    [11,12,13],
+    [21,22,23],
+    [31, 32, 33],
+];
+
+console.log(array);
+console.log(array[0]);
+console.log(array[1][1]);
+console.log(array[0][1]);
+
+let arr2 = array.pop();
+console.log(array.length);
+console.log(arr2);
+console.log(array);
+
+let array_num = array.push([41,42,43]);
+console.log(typeof(array_num));
+console.log(array);
+
+array = [[101,102,103],[201,202,203],[301,302,303],];
+
+for(let i = 0; i < array.length; i++)
+{
+    for(let j = 0; j< array[i].length; j++)
+    {
+        console.log(array[i][j]);
+    }
+}
+
+fruits = [
+    ["strawberry", 50],
+    ["banana", 100],
+    ["ice", 150],
+];
+
+for(let i = 0; i < array.length; i++){
+    console.log(`fruit: ${fruits[i][0]}, amount: ${fruits[i][1]}`);
+}
