@@ -37,7 +37,7 @@ let recipe_juice = new Map([
     ["banana", 100],
     ["ice",150],
 ])
-
+console.log("keys aaaaaaaaaaaaaaa")
 for(let item of recipe_juice.keys()){
     console.log(item);
 }
@@ -104,3 +104,5 @@ for(let item of str.values()){
 for(let item of str.entries()){
     console.log(item);
 }
+
+console.log(typeof(String(123)));
